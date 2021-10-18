@@ -1,0 +1,123 @@
+.Hotel {
+  width: 320px;
+  border: 1px solid rgb(209, 209, 209);
+  padding: 1em 0;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: -2px -1px 29px -5px rgba(141, 134, 134, 0.31);
+  margin: 0 0.6em 1.5em 0.6em;
+}
+
+.Hotel-img {
+  width: 90%;
+  border-radius: 5px;
+  margin-bottom: 1em;
+}
+
+.Hotel-name {
+  font-weight: bold;
+  font-size: 20px;
+  width: 90%;
+  margin: 0 0 1em 0;
+}
+
+.Hotel-date {
+  background-color: rgb(32, 238, 169);
+  width: 90%;
+  border-radius: 2px;
+  margin-bottom: 0.5em;
+  color: white;
+}
+
+.Hotel-date p {
+  padding-left: 1em;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.Hotel-description {
+  height: 100px;
+  overflow: scroll;
+  overflow-x: hidden;
+  width: 90%;
+  margin: 1em 0;
+}
+
+.Hotel-description p {
+  margin: 0;
+  font-size: 16px;
+  color: rgb(112, 112, 112);
+  padding-right: 0.5em;
+}
+
+.Hotel-description::-webkit-scrollbar {
+  width: 5px;
+}
+
+.Hotel-description::-webkit-scrollbar-track {
+  background-color: #e7e5e5;
+}
+
+.Hotel-description::-webkit-scrollbar-thumb {
+  background-color: rgb(32, 238, 169);
+}
+
+.Hotel-snackBar {
+  width: 90%;
+  border-radius: 5px;
+  margin-bottom: 0.5em;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.Hotel-icon {
+  border-radius: 5px;
+  background-color: rgb(32, 138, 238);
+  padding: 1em;
+  color: white;
+}
+.Hotel-room {
+  padding: 0 0.1em;
+  color: rgb(112, 112, 112);
+}
+
+.Hotel-roomsPricing {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1em;
+}
+
+.Hotel-roomsPricing .Hotel-snackBar {
+  display: inline-block;
+  width: 62%;
+}
+
+.Hotel-pricing {
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 30%;
+  padding: 1.1em 0.5em;
+  background-color: rgb(32, 138, 238);
+  border-radius: 2px;
+  color: rgba(255, 255, 255, 0.411);
+  border-radius: 5px;
+}
+
+.btn {
+  width: 90%;
+  border: none;
+  background-color: rgb(32, 238, 169);
+  color: white;
+  padding: 1em 0;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.priceOn {
+  color: white;
+}

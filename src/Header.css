@@ -1,0 +1,12 @@
+.Header {
+  background-color: rgb(32, 238, 169);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+}
+
+.Header-container {
+  width: 1024px;
+}

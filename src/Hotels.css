@@ -1,0 +1,12 @@
+.Hotels {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.Hotels-container {
+  width: 1024px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+}
