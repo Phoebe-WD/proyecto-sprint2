@@ -5,7 +5,7 @@ const days = [
   "Jueves",
   "Viernes",
   "Sábado",
-  "Domingo"
+  "Domingo",
 ];
 const months = [
   "Enero",
@@ -19,10 +19,9 @@ const months = [
   "Septiembre",
   "Octubre",
   "Noviembre",
-  "Diciembre"
+  "Diciembre",
 ];
 
-//función que permite convertir las fechas unix de cada hotel en texto natural
 const formatDate = (unix) => {
   const date = new Date(unix);
   const year = date.getFullYear();
@@ -32,7 +31,6 @@ const formatDate = (unix) => {
   return `${days[day]}, ${monthDay} de ${months[month]} de ${year}`;
 };
 
-//función que permite convertir la cantidad de piezas en un filtro en lenguaje natural
 const roomSize = (rooms) => {
   if (rooms <= 10) return "Pequeño";
   if (rooms > 10 && rooms < 20) return "Mediano";
@@ -41,7 +39,6 @@ const roomSize = (rooms) => {
   return "";
 };
 
-//función que permite convertir los precios en un filtro de lenguaje natural
 const roomPrice = (price) => {
   if (price === 1) return "económico";
   if (price === 2) return "confort";

@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import Header from "./Header";
 import Hotels from "./Hotels";
 import Filters from "./Filters";
-import Error from "./Error";
 import { hotelsData } from "./assets/data";
 import { roomSize, roomPrice } from "./formatData";
 
@@ -15,14 +14,25 @@ function App() {
   const [to, setTo] = useState("");
   const [hotels, setHotels] = useState(hotelsData);
 
-  const hotelsFilters = () => {
-    return hotels.filter((hotel) => {
-      if (country === "todos") return true;
-      else return hotel.country.toLowerCase() === country.toLowerCase();
-    });
-  };
+  const hotelsFiltersCountry = hotels.filter((hotel) => {
+    if (country === "todos") return true;
+    else return hotel.country.toLowerCase() === country.toLowerCase();
+  });
 
-  const hotelFiltered = hotelsFilters();
+  const hotelFilterCountryPrice = hotelsFiltersCountry.filter((hotel) => {
+    if (price === "todos") return true;
+    else return roomPrice(hotel.price) === price;
+  });
+
+  const hotelFilterCountryPriceSize = hotelFilterCountryPrice.filter(
+    (hotel) => {
+      if (size === "todos") {
+        return true;
+      } else {
+        return roomSize(hotel.rooms) === size;
+      }
+    }
+  );
 
   return (
     <div className="App">
@@ -39,7 +49,7 @@ function App() {
         setSize={setSize}
         setPrice={setPrice}
       />
-      {hotels.length > 0 ? <Hotels data={hotelFiltered} /> : <Error />}
+      <Hotels data={hotelFilterCountryPriceSize} />
     </div>
   );
 }
