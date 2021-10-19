@@ -2,7 +2,7 @@ import React from "react";
 import "./Hotel.css";
 import { formatDate } from "./formatData";
 
-export default function Hotel(props) {
+const Hotel = (props) => {
   const priceSign = [false, false, false, false];
 
   //función que permite visualizar los íconos de los precios en las Hotels de cada hotel
@@ -73,4 +73,6 @@ export default function Hotel(props) {
       <button className="btn">Reservar</button>
     </div>
   );
-}
+};
+
+export default Hotel;

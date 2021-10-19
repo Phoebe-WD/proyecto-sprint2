@@ -21,22 +21,7 @@ export default function Filters({
     setFrom("");
     setTo("");
   };
-  const handleCountry = (evento) => {
-    setCountry(evento.target.value);
-  };
-  const handleSize = (evento) => {
-    setSize(evento.target.value);
-  };
-  const handlePrice = (evento) => {
-    setPrice(evento.target.value);
-  };
 
-  const handleDateFrom = (evento) => {
-    setFrom(evento.target.value);
-  };
-  const handleDateTo = (evento) => {
-    setTo(evento.target.value);
-  };
   return (
     <section className="Filters">
       <div className="Filters-container">
@@ -47,14 +32,14 @@ export default function Filters({
             className="dateInputs"
             name="from"
             required
-            onChange={handleDateFrom}
+            onChange={(e) => setFrom(e.target.value)}
           />
           <input
             type="date"
             name="to"
             id="to"
             value={to}
-            onChange={handleDateTo}
+            onChange={(e) => setTo(e.target.value)}
             className="dateInputs"
             required
           />
@@ -62,7 +47,7 @@ export default function Filters({
         <select
           name="country"
           id="country"
-          onChange={handleCountry}
+          onChange={(e) => setCountry(e.target.value)}
           value={country}
         >
           <option value="todos">Todos los países</option>
@@ -71,13 +56,23 @@ export default function Filters({
           <option value="Uruguay">Uruguay</option>
           <option value="Brasil">Brasil</option>
         </select>
-        <select name="rooms" id="rooms" onChange={handleSize} value={size}>
+        <select
+          name="rooms"
+          id="rooms"
+          onChange={(e) => setSize(e.target.value)}
+          value={size}
+        >
           <option value="todos">Todos los tamaños</option>
           <option value="Pequeño">Pequeño</option>
           <option value="Mediano">Mediano</option>
           <option value="Grande">Grande</option>
         </select>
-        <select name="price" id="price" onChange={handlePrice} value={price}>
+        <select
+          name="price"
+          id="price"
+          onChange={(e) => setPrice(e.target.value)}
+          value={price}
+        >
           <option value="todos">Todos los precios</option>
           <option value="económico">$</option>
           <option value="confort">$$</option>
