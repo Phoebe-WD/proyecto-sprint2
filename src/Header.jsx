@@ -7,11 +7,13 @@ export default function Header(props) {
       <div className="Header-container">
         <h1>Hoteles</h1>
         <p>
-          {props.from === "" && props.to === ""
-            ? `En cualquier fecha.`
-            : `Desde el ${formatDate(props.from)}, hasta el ${formatDate(
-                props.to
-              )}`}
+          {props.from === "" || props.to === "" ? (
+            <span>En cualquier fecha.</span>
+          ) : (
+            `Desde el ${formatDate(props.from)}, hasta el ${formatDate(
+              props.to
+            )}`
+          )}
         </p>
         <p>
           {props.country === "" ? `En cualquier país.` : `En ${props.country}.`}
