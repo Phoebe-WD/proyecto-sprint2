@@ -78,6 +78,7 @@
   padding: 1em;
   color: white;
 }
+
 .Hotel-room {
   padding: 0 0.1em;
   color: rgb(112, 112, 112);
@@ -116,6 +117,7 @@
   padding: 1em 0;
   border-radius: 5px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .priceOn {
