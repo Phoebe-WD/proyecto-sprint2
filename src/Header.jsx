@@ -7,7 +7,7 @@ export default function Header(props) {
       <div className="Header-container">
         <h1>Hoteles</h1>
         <p>
-          {props.from === "" || props.to === "" ? (
+          {!props.from || !props.to ? (
             <span>En cualquier fecha.</span>
           ) : (
             `Desde el ${formatDate(props.from)}, hasta el ${formatDate(
