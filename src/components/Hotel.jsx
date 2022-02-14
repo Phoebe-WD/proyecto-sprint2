@@ -1,41 +1,47 @@
 import React from "react";
-import "./Hotel.css";
+import "../styles/Hotel.css";
 import { formatDate } from "./formatData";
 
-const Hotel = (props) => {
+const Hotel = ({
+  price,
+  name,
+  photo,
+  description,
+  availabilityFrom,
+  availabilityTo,
+  city,
+  country,
+  rooms,
+}) => {
   const priceSign = [false, false, false, false];
 
-  //función que permite visualizar los íconos de los precios en las Hotels de cada hotel
   const priceHandler = (qty) => {
     for (let i = 0; i <= qty; i++) {
       priceSign[i] = true;
     }
   };
 
-  priceHandler(props.price);
+  priceHandler(price);
 
   return (
     <div className="Hotel">
-      <img src={props.photo} alt="" className="Hotel-img" />
-      <h2 className="Hotel-name">{props.name}</h2>
+      <img src={photo} alt="" className="Hotel-img" />
+      <h2 className="Hotel-name">{name}</h2>
       <div className="Hotel-date">
-        <p>{formatDate(props.availabilityFrom)}</p>
+        <p>{formatDate(availabilityFrom)}</p>
       </div>
       <div className="Hotel-date">
-        <p>{formatDate(props.availabilityTo)}</p>
+        <p>{formatDate(availabilityTo)}</p>
       </div>
       <div className="Hotel-description">
-        <p>{props.description}</p>
+        <p>{description}</p>
       </div>
       <div className="Hotel-snackBar">
         <p className="Hotel-country">
           <span className="Hotel-icon">
             <i className="fas fa-map-marker-alt"></i>{" "}
           </span>
-          <span className="Hotel-room">
-            {" "}
-            {`${props.city}, ${props.country}`}{" "}
-          </span>
+          <span className="Hotel-room"> {`${city}, ${country}`} </span>
         </p>
       </div>
       <div className="Hotel-roomsPricing">
@@ -44,7 +50,7 @@ const Hotel = (props) => {
             <span className="Hotel-icon">
               <i className="fas fa-bed"></i>
             </span>{" "}
-            <span className="Hotel-room">{`${props.rooms} Habitaciones`}</span>
+            <span className="Hotel-room">{`${rooms} Habitaciones`}</span>
           </p>
         </div>
         <div className="Hotel-pricing">

@@ -1,11 +1,14 @@
 import Hotel from "./Hotel";
-import "./Hotels.css";
+import "../styles/Hotels.css";
 import Error from "./Error";
+import { useContext } from "react";
+import GlobalContext from "../utils/globalContext";
 
-export default function Hotels(props) {
-  let hotels = props.data;
+export default function Hotels() {
+  const { hotels } = useContext(GlobalContext);
+
   return (
-    <div className="Hotels">
+    <main className="Hotels">
       <div className="Hotels-container">
         {hotels.length > 0 ? (
           hotels?.map((hotel) => {
@@ -28,6 +31,6 @@ export default function Hotels(props) {
           <Error />
         )}
       </div>
-    </div>
+    </main>
   );
 }

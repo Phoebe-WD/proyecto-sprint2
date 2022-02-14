@@ -1,18 +1,21 @@
-import "./Filters.css";
+import "../styles/Filters.css";
 import React from "react";
+import { useContext } from "react";
+import GlobalContext from "../utils/globalContext";
 
-export default function Filters({
-  country,
-  size,
-  price,
-  from,
-  to,
-  setFrom,
-  setTo,
-  setPrice,
-  setSize,
-  setCountry,
-}) {
+export default function Filters() {
+  const {
+    country,
+    size,
+    price,
+    from,
+    to,
+    setFrom,
+    setTo,
+    setPrice,
+    setSize,
+    setCountry,
+  } = useContext(GlobalContext);
   const resetFilters = () => {
     // Resetear filtros a su estado inicial
     setCountry("todos");
@@ -31,6 +34,7 @@ export default function Filters({
             value={from}
             className="dateInputs"
             name="from"
+            id="from"
             required
             onChange={(e) => setFrom(e.target.value)}
           />
